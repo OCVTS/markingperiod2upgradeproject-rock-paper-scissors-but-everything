@@ -42,7 +42,7 @@ const getUserChoice = () => {
       if (userChoice === 'rock') {
         if (computerChoice === 'paper') {
           return "Aw man. Computer won!";
-        } else {
+        }  else {
           return "WHOO HOO YOU WIN!";
         }
        
@@ -65,5 +65,6 @@ const getUserChoice = () => {
         return "You gathered everyones energy and won!"
       }
     };
+
     
 document.getElementById('submit').addEventListener("click", getUserChoice);
