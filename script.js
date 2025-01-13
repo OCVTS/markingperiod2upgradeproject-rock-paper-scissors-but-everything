@@ -76,6 +76,14 @@ const getUserChoice = () => {
 
     };
 
-
-    
+    const resetGame = () => {
+    userChoice = "";
+    computerChoice= "";
+    playerScore = 0;  
+    computerScore = 0;
+    document.getElementById("winner").innerHTML = determineWinner();
+    document.getElementById("playerScore").innerHTML = `Player score: ${playerScore}`;
+    document.getElementById("computerScore").innerHTML = `Computer score: ${computerScore}`;
+    }
 document.getElementById('submit').addEventListener("click", getUserChoice);
+document.getElementById('reset').addEventListener("click", resetGame)
