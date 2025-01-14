@@ -81,7 +81,9 @@ const getUserChoice = () => {
     computerChoice= "";
     playerScore = 0;  
     computerScore = 0;
-    document.getElementById("winner").innerHTML = determineWinner();
+    document.getElementById("userChoice").innerHTML = "Player Selected: ";
+    document.getElementById("computerChoice").innerHTML = "Computer Selected: ";
+    document.getElementById("winner").innerHTML = "Game RESET!";
     document.getElementById("playerScore").innerHTML = `Player score: ${playerScore}`;
     document.getElementById("computerScore").innerHTML = `Computer score: ${computerScore}`;
     }
