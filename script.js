@@ -6,7 +6,7 @@ let computerScore = 0;
 const getUserChoice = () => {
   // alert("getUserChoice ran");
     let userInput = document.getElementById('userInput').value.toLowerCase();
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'SpiritBomb' ) {
+    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'spiritbomb' || userInput === 'hammer' ) {
     userChoice = userInput;
     // User and computer choice is displayed on the screen with selected choices.
     document.getElementById("userChoice").innerHTML = ("Player Selected: " + userChoice);
@@ -23,17 +23,20 @@ const getUserChoice = () => {
 
     }
     const getComputerChoice = () => {
-     let randomNumber = Math.floor(Math.random() * 3);
+     let randomNumber = Math.floor(Math.random() * 4);
      switch (randomNumber) {
       case 0:
-      return 'rock';
+        return 'rock';
       break;
       case 1:
-      return 'paper';
+        return 'paper';
       break;
       case 2:
-      return 'scissors';
-      break
+        return 'scissors';
+      break;
+      case 3:
+        return 'hammer';
+      break;
      }
     };
     const determineWinner = () => {
@@ -67,13 +70,22 @@ const getUserChoice = () => {
         } else {
           playerScore += 1;
           return "WHOO HOO YOU WIN!";
+        } 
+
+      } 
+      if (userChoice === 'hammer') {
+        if (computerChoice === 'paper') {
+          computerScore += 1;
+          return "Aw dangit. Computer used HAMMER!"
+        } else {
+          playerScore += 1;
+          return "HAMMER!"
         }
       }
-      if (userChoice === 'SpiritBomb') {
+      if (userChoice === 'spiritbomb') {
         playerScore += 1;
-        return "You gathered everyones energy and won!"
+        return "You gathered everyone's energy and won!"
       }
-
     };
 
     const resetGame = () => {
