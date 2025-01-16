@@ -23,7 +23,7 @@ const getUserChoice = () => {
 
     }
     const getComputerChoice = () => {
-     let randomNumber = Math.floor(Math.random() * 4);
+     let randomNumber = Math.floor(Math.random() * 3);
      switch (randomNumber) {
       case 0:
         return 'rock';
