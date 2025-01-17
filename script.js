@@ -6,7 +6,7 @@ let computerScore = 0;
 const getUserChoice = () => {
   // alert("getUserChoice ran");
     let userInput = document.getElementById('userInput').value.toLowerCase();
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'spiritbomb' || userInput === 'hammer' ) {
+    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'spiritbomb' || userInput === 'hammer' || userInput === 'soulpunisher' || userChoice === 'kevinhart' || userChoice === 'therock') {
     userChoice = userInput;
     // User and computer choice is displayed on the screen with selected choices.
     document.getElementById("userChoice").innerHTML = ("Player Selected: " + userChoice);
@@ -23,7 +23,7 @@ const getUserChoice = () => {
 
     }
     const getComputerChoice = () => {
-     let randomNumber = Math.floor(Math.random() * 3);
+     let randomNumber = Math.floor(Math.random() * 6);
      switch (randomNumber) {
       case 0:
         return 'rock';
@@ -36,6 +36,12 @@ const getUserChoice = () => {
       break;
       case 3:
         return 'hammer';
+      break;
+      case 4:
+        return 'therock';
+      break;
+      case 5:
+        return 'kevinhart';
       break;
      }
     };
@@ -76,7 +82,7 @@ const getUserChoice = () => {
       if (userChoice === 'hammer') {
         if (computerChoice === 'paper') {
           computerScore += 1;
-          return "Aw dangit. Computer used HAMMER!"
+          return "Aw dangit. Computer beat the hammer"
         } else {
           playerScore += 1;
           return "HAMMER!"
@@ -85,6 +91,19 @@ const getUserChoice = () => {
       if (userChoice === 'spiritbomb') {
         playerScore += 1;
         return "You gathered everyone's energy and won!"
+      }
+      if (userChoice === 'kevinhart') {
+        if (computerChoice === 'therock') {
+          computerScore += 1;
+          return "ROCK BOTTOM TO KEVIN HART!!!" 
+        } else {
+          playerScore += 1;
+          return "HOW DID KEVIN HART WIN?!";
+        }
+      }
+      if (userChoice === 'soulpunisher') {
+        playerScore += 1;
+        return "The computers hardrive was cleansed. You win!";
       }
     };
 
