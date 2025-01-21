@@ -6,7 +6,7 @@ let computerScore = 0;
 const getUserChoice = () => {
   // alert("getUserChoice ran");
     let userInput = document.getElementById('userInput').value.toLowerCase();
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'spiritbomb' || userInput === 'hammer' || userInput === 'soulpunisher' || userChoice === 'kevinhart' || userChoice === 'therock') {
+    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'spiritbomb' || userInput === 'hammer' || userInput === 'soulpunisher' || userInput === 'kevinhart' || userInput === 'therock') {
     userChoice = userInput;
     // User and computer choice is displayed on the screen with selected choices.
     document.getElementById("userChoice").innerHTML = ("Player Selected: " + userChoice);
@@ -104,6 +104,15 @@ const getUserChoice = () => {
       if (userChoice === 'soulpunisher') {
         playerScore += 1;
         return "The computers hardrive was cleansed. You win!";
+      }
+      if (userChoice === 'therock') {
+        if (computerChoice === 'kevinhart') {
+          computerScore += 1;
+          return "Kevin Hart makes better movies";
+        } else {
+          playerScore += 1;
+          return  "The Rock makes better movies"
+        }
       }
     };
 
