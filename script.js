@@ -2,6 +2,7 @@ let userChoice = "";
 let computerChoice= "";
 let playerScore = 0;  
 let computerScore = 0;
+let gameTime = 0; // adds a game timer in seconds
 
 const getUserChoice = () => {
   // alert("getUserChoice ran");
@@ -127,5 +128,17 @@ const getUserChoice = () => {
     document.getElementById("playerScore").innerHTML = `Player score: ${playerScore}`;
     document.getElementById("computerScore").innerHTML = `Computer score: ${computerScore}`;
     }
+
+    const startGameTimer = () => {
+      setInterval(() => {
+        gameTime++;
+        let minutes = Math.floor(gameTime / 60);
+        let seconds = gameTime % 60;
+        document.getElementById("gamerTimer").innerHTML = `Game Time ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+      })
+    }
+
+    startGameTimer();
+
 document.getElementById('submit').addEventListener("click", getUserChoice);
 document.getElementById('reset').addEventListener("click", resetGame)
