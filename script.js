@@ -3,6 +3,7 @@ let computerChoice= "";
 let playerScore = 0;  
 let computerScore = 0;
 let gameTime = 0; // adds a game timer in seconds
+let timerInterval;
 
 const getUserChoice = () => {
   // alert("getUserChoice ran");
@@ -117,11 +118,29 @@ const getUserChoice = () => {
       }
     };
 
+    const startGameTimer = () => {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+      } 
+      setInterval(() => {
+        gameTime++;
+        let minutes = Math.floor(gameTime / 60);
+        let seconds = gameTime % 60;
+        document.getElementById("gameTime").innerHTML = `Game Time: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+      }, 1000);
+    }
+
+
     const resetGame = () => {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+      } 
     userChoice = "";
     computerChoice= "";
     playerScore = 0;  
     computerScore = 0;
+    gameTime = 0;
+    document.getElementById("gameTime").innerHTML = "Game Time: 0:00";
     document.getElementById("userChoice").innerHTML = "Player Selected: ";
     document.getElementById("computerChoice").innerHTML = "Computer Selected: ";
     document.getElementById("winner").innerHTML = "Game RESET!";
@@ -129,16 +148,7 @@ const getUserChoice = () => {
     document.getElementById("computerScore").innerHTML = `Computer score: ${computerScore}`;
     }
 
-    const startGameTimer = () => {
-      setInterval(() => {
-        gameTime++;
-        let minutes = Math.floor(gameTime / 60);
-        let seconds = gameTime % 60;
-        document.getElementById("gamerTimer").innerHTML = `Game Time ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-      }, 1000);
-    }
-
     startGameTimer();
 
 document.getElementById('submit').addEventListener("click", getUserChoice);
-document.getElementById('reset').addEventListener("click", resetGame)
+document.getElementById('reset').addEventListener("click", resetGame);
