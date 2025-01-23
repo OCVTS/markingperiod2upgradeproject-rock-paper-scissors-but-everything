@@ -135,7 +135,7 @@ const getUserChoice = () => {
         let minutes = Math.floor(gameTime / 60);
         let seconds = gameTime % 60;
         document.getElementById("gamerTimer").innerHTML = `Game Time ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-      })
+      }, 1000);
     }
 
     startGameTimer();
