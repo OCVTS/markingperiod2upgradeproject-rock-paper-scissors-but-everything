@@ -7,6 +7,7 @@ let timerInterval;
 
 const getUserChoice = () => {
   // alert("getUserChoice ran");
+  // UserInput function
     let userInput = document.getElementById('userInput').value.toLowerCase();
     if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'spiritbomb' || userInput === 'hammer' || userInput === 'soulpunisher' || userInput === 'kevinhart' || userInput === 'therock') {
     userChoice = userInput;
