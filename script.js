@@ -25,6 +25,7 @@ const getUserChoice = () => {
 
 
     }
+    // runs each choice  both the computer and player can make
     const getComputerChoice = () => {
      let randomNumber = Math.floor(Math.random() * 6);
      switch (randomNumber) {
@@ -48,6 +49,7 @@ const getUserChoice = () => {
       break;
      }
     };
+    // Lists the choices and their win conditions
     const determineWinner = () => {
       result = "";
       if (userChoice === computerChoice) {
@@ -91,6 +93,7 @@ const getUserChoice = () => {
           return "HAMMER!"
         }
       }
+      // choice that only the player can use
       if (userChoice === 'spiritbomb') {
         playerScore += 1;
         return "You gathered everyone's energy and won!"
@@ -119,6 +122,7 @@ const getUserChoice = () => {
       }
     };
 
+    // A timer that counts up to show how long the game has gone for.
     const startGameTimer = () => {
       if (timerInterval) {
         clearInterval(timerInterval);
@@ -131,7 +135,7 @@ const getUserChoice = () => {
       }, 1000);
     }
 
-
+    // resetGame function runs when reset button is clicked
     const resetGame = () => {
       if (timerInterval) {
         clearInterval(timerInterval);
