@@ -1,0 +1,46 @@
+body {
+    background-color: lavender;
+    color: blueviolet;
+}
+
+header {
+    text-align: center;
+    color: Black;
+}
+
+h2 {
+    color: black;
+    border-bottom: 2px ridge midnightblue;
+}
+
+p {
+    color: blue;
+    font-size: 18px
+
+}
+
+#description {
+    background-color: lightslategray;
+
+}
+
+#development {
+    background-color: lightslategray;
+}
+
+.flex-container {
+    display: flex;
+    height: 15vh;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    border: 2px groove black;
+    margin: 10px;
+    flex: 1;
+    min-width: 30%;
+    max-height: 95px;
+    background-color: lightslategray;
+}
